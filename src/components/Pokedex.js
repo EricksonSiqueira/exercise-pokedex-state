@@ -11,8 +11,11 @@ class Pokedex extends Component {
           <h1>Pokedex</h1>
         </header>
         <main className="pokedex-cards">
-          {pokemons.map((pokemonData) => <Pokemon key={pokemonData.id} pokemonData={pokemonData} />)}
+          <Pokemon key={pokemons[0].id} pokemonData={pokemons[0]} />
         </main>
+        <section>
+          <button className="next-btn">Próximo</button>
+        </section>
       </div>
     );
   }
