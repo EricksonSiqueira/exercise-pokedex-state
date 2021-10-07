@@ -9,21 +9,21 @@ class Pokedex extends Component {
 
     this.state = {
       pokemonIndex: 0,
+      pokemonFilter: 'fire',
     }
-
+    this.setPokemonFilter = this.setPokemonFilter.bind(this);
     this.nextPokemon = this.nextPokemon.bind(this);
   }
 
+  setPokemonFilter() {
+
+  }
   nextPokemon() {
-    if(this.state.pokemonIndex === pokemons.length - 1){
-      this.setState((_previousValue, _props) => ({
-        pokemonIndex: 0,
-      }))
-    } else {
+    const lastIndex = pokemons.length - 1;
+    const { pokemonIndex } = this.state;
       this.setState((previousValue, _props) => ({
-        pokemonIndex: previousValue.pokemonIndex + 1,
+        pokemonIndex: (pokemonIndex === lastIndex) ? 0 : previousValue.pokemonIndex + 1,
       }))
-    }
   }
   render() {
     const {pokemonIndex} = this.state;
