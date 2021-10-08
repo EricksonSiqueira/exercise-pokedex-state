@@ -73,6 +73,11 @@ h1 {
   background-color: grey;
 }
 
+.black-btn {
+  color: white;
+  background-color: black;
+}
+
 .red-btn {
   color: white;
   background-color: red;

@@ -11,22 +11,37 @@ class Pokedex extends Component {
       pokemonIndex: 0,
       pokemonArr: pokemons,
     }
+    this.resetPokemonIndex = this.resetPokemonIndex.bind(this);
+    this.resetPokemonArr = this.resetPokemonArr.bind(this);
     this.setPokemonFilter = this.setPokemonFilter.bind(this);
+    this.previousPokemon = this.previousPokemon.bind(this);
     this.nextPokemon = this.nextPokemon.bind(this);
-    this.resetPokemonIndex = this.resetPokemonIndex.bind(this)
   }
 
+  
   resetPokemonIndex() {
     this.setState((_previousValue, _prop) => ({
       pokemonIndex: 0,
     }))
   }
-
+  resetPokemonArr(){
+    this.resetPokemonIndex()
+    this.setState((_previousValue, _prop) => ({
+      pokemonArr: pokemons,
+    }))
+  }
   setPokemonFilter({target}) {
     this.resetPokemonIndex();
     const filteredPokemons = pokemons.filter((pokemon) => pokemon.type === target.value)
     this.setState(() => ({
       pokemonArr: filteredPokemons,
+    }))
+  }
+  previousPokemon() {
+    const { pokemonIndex } = this.state;
+    const firstIndex = 0;
+    this.setState((previousValue, _props) => ({
+      pokemonIndex: (pokemonIndex === firstIndex) ? 0 : previousValue.pokemonIndex - 1,
     }))
   }
   nextPokemon() {
@@ -47,10 +62,11 @@ class Pokedex extends Component {
           <Pokemon key={pokemonArr[pokemonIndex].id} pokemonData={pokemonArr[pokemonIndex]} />
         </main>
         <section>
-          <button onClick={this.nextPokemon} className="btn red-btn">Anterior</button>
+          <button onClick={this.previousPokemon} className="btn red-btn">Anterior</button>
           <button onClick={this.nextPokemon} className="btn green-btn">Próximo</button>
         </section>
         <section>
+          <button onClick={this.resetPokemonArr} className="btn black-btn">Todos</button>
           <button onClick={this.setPokemonFilter} value="Fire" className="btn orange-btn">Fire</button>
           <button onClick={this.setPokemonFilter} value="Electric" className="btn yellow-btn">Electric</button>
           <button onClick={this.setPokemonFilter} value="Bug" className="btn light-green-btn">Bug</button>
