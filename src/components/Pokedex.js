@@ -47,16 +47,17 @@ class Pokedex extends Component {
           <Pokemon key={pokemonArr[pokemonIndex].id} pokemonData={pokemonArr[pokemonIndex]} />
         </main>
         <section>
-          <button onClick={this.nextPokemon} className="next-btn">Próximo</button>
+          <button onClick={this.nextPokemon} className="btn red-btn">Anterior</button>
+          <button onClick={this.nextPokemon} className="btn green-btn">Próximo</button>
         </section>
         <section>
-          <button onClick={this.setPokemonFilter} value="Fire" className="next-btn">Fire</button>
-          <button onClick={this.setPokemonFilter} value="Electric" className="next-btn">Electric</button>
-          <button onClick={this.setPokemonFilter} value="Bug" className="next-btn">Bug</button>
-          <button onClick={this.setPokemonFilter} value="Poison" className="next-btn">Poison</button>
-          <button onClick={this.setPokemonFilter} value="Psychic" className="next-btn">Psychic</button>
-          <button onClick={this.setPokemonFilter} value="Normal" className="next-btn">Normal</button>
-          <button onClick={this.setPokemonFilter} value="Dragon" className="next-btn">Dragon</button>
+          <button onClick={this.setPokemonFilter} value="Fire" className="btn orange-btn">Fire</button>
+          <button onClick={this.setPokemonFilter} value="Electric" className="btn yellow-btn">Electric</button>
+          <button onClick={this.setPokemonFilter} value="Bug" className="btn light-green-btn">Bug</button>
+          <button onClick={this.setPokemonFilter} value="Poison" className="btn light-purple-btn">Poison</button>
+          <button onClick={this.setPokemonFilter} value="Psychic" className="btn pink-btn">Psychic</button>
+          <button onClick={this.setPokemonFilter} value="Normal" className="btn grey-btn">Normal</button>
+          <button onClick={this.setPokemonFilter} value="Dragon" className="btn purple-btn">Dragon</button>
         </section>
       </div>
     );

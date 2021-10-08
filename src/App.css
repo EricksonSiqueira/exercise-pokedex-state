@@ -52,13 +52,49 @@ h1 {
 .pokemon-info p {
   margin: 5px 0;
 }
+.yellow-btn {
+   color: #444;
+  background-color: yellow;
+}
+.purple-btn {
+  color: white;
+  background-color: purple;
+}
+.light-purple-btn {
+  color: white;
+  background-color: rgb(203, 3, 230);
+}
+.pink-btn {
+  color: #444;
+  background-color: pink;
+}
+.grey-btn {
+  color: white;
+  background-color: grey;
+}
 
-.next-btn {
-  font-size: 18px;
+.red-btn {
+  color: white;
+  background-color: red;
+}
+.orange-btn {
+  color: white;
+  background-color: orangered;
+}
+.green-btn {
   color: white;
   background-color: green;
+}
+.light-green-btn {
+ background-color: rgb(89, 255, 47);
+ color: #444;
+}
+
+.btn {
+  font-size: 18px;
   width: 100px;
   padding: 10px 0;
+  margin: 0 1px;
   margin-bottom: 10px;
   border-radius: 10px;
   cursor: pointer;
