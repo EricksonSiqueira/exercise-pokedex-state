@@ -38,10 +38,10 @@ class Pokedex extends Component {
     }))
   }
   previousPokemon() {
-    const { pokemonIndex } = this.state;
-    const firstIndex = 0;
+    const { pokemonIndex ,pokemonArr } = this.state;
+    const lastIndex = pokemonArr.length - 1;
     this.setState((previousValue, _props) => ({
-      pokemonIndex: (pokemonIndex === firstIndex) ? 0 : previousValue.pokemonIndex - 1,
+      pokemonIndex: (pokemonIndex === 0) ? lastIndex : previousValue.pokemonIndex - 1,
     }))
   }
   nextPokemon() {
